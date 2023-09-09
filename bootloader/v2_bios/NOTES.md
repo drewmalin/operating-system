@@ -30,12 +30,18 @@ In 32-bit mode, each has an extended 32 bit version:
 #### MOV
 
 The MOV operation supports 'simple' movement of data:
-* `mov AL, 0xF ; AL has been loaded with the value '0xF'`
-* `mov BL, 0x4 ; BL has been loaded with the value '0x4'`
-* `mov AL, 15  ; AL has been loaded with the value '15'`
-* `mov AL, BL  ; AL has been loaded with the address of BL`
-* `mov BL, [AL]; BL has been loaded with the value at the address of AL`
-* `mov [BL], AL; The value of BL is set to the address of AL`
+```
+
+; Data, assume the memory address is 12345
+mydata:
+  DB 'hello'
+
+MOV EAX, mydata      ; eax -> 12345
+MOV EAX, [mydata]    ; eax -> 'h'
+
+MOV EAX, 13          ; eax -> 13
+MOV [mydata], EAX    ; mem@12345 -> 13 
+```
 
 #### DB
 
