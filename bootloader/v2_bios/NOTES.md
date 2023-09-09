@@ -18,11 +18,12 @@ Each can be subdivided into its upper/high (H) or lower (L) 8 bits:
 
 In 32-bit mode, each has an extended 32 bit version:
 
-    |FF              1F|F       8|7      0
-EAX>|               AX>|   AH    |   AL   |
-EBX>|               BX>|   BH    |   BL   |
-ECX>|               CX>|   CH    |   CL   |
-EDX>|               DX>|   DH    |   DL   |
+| 32 Bit | 16 Bit | 8 Bit (High half of 16) | 8 Bit (Low half of 16) |
+| ---- | ---- | ---- | ---- |
+| EAX | AX | AH | AL |
+| EBX | BX | BH | BL |
+| ECX | CX | CH | CL |
+| EDX | DX | DH | DL |
 
 ### Operations
 
